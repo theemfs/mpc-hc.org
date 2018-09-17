@@ -31,6 +31,7 @@
     "grunt-contrib-htmlmin": "^3.1.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-critical": "^1.1.1",
     "grunt-doctype": "^2.0.2",
     "grunt-eslint": "^22.0.0",
     "grunt-filerev": "^2.3.1",
