@@ -15,14 +15,16 @@
   "license": "MIT",
   "scripts": {
     "build": "grunt build",
-    "test": "grunt test"
+    "serve-only": "bundle exec jekyll serve --skip-initial-build --no-watch",
+    "pa11y-ci": "pa11y-ci --config .pa11yci.json --sitemap http://localhost:8000/sitemap.xml --sitemap-find https://mpc-hc.org --sitemap-replace http://localhost:8000",
+    "accessibility": "npm-run-all --parallel --race serve-only pa11y-ci",
+    "test": "grunt test && npm run accessibility"
   },
   "dependencies": {},
   "devDependencies": {
     "@lodder/grunt-postcss": "^2.0.1",
     "autoprefixer": "^9.7.5",
     "grunt": "^1.1.0",
-    "grunt-accessibility": "^6.0.0",
     "grunt-bootlint": "^1.0.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -41,6 +43,8 @@
     "grunt-sri-hash": "^1.1.5",
     "grunt-usemin": "^3.1.1",
     "load-grunt-tasks": "^5.1.0",
+    "npm-run-all": "^4.1.5",
+    "pa11y-ci": "^2.3.0",
     "postcss-combine-duplicated-selectors": "^8.1.0",
     "time-grunt": "^2.0.0"
   },

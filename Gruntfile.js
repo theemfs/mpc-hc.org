@@ -287,21 +287,6 @@ module.exports = function(grunt) {
             src: '<%= dirs.dest %>/**/*.html'
         },
 
-        accessibility: {
-            options: {
-                accessibilityLevel: 'WCAG2AA',
-                browser: true,
-                reportLevels: {
-                    notice: false,
-                    warning: false,
-                    error: true
-                }
-            },
-            test: {
-                src: '<%= dirs.dest %>/**/*.html'
-            }
-        },
-
         clean: {
             dist: '<%= dirs.dest %>/'
         }
@@ -329,8 +314,7 @@ module.exports = function(grunt) {
         'csslint',
         'bootlint',
         'eslint',
-        'htmllint',
-        'accessibility'
+        'htmllint'
     ]);
 
     grunt.registerTask('dev', [
